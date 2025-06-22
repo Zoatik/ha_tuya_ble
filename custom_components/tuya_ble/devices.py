@@ -330,6 +330,9 @@ devices_database: dict[str, TuyaBLECategoryInfo] = {
             "nxquc5lb": TuyaBLEProductInfo(  # device product_id
                 name="Smart Water Valve",
             ),
+            "ldcdnigc": TuyaBLEProductInfo(
+                name="ZX-7378 Smart Irrigation Controller",
+            ),
         },
     ),
     "co2bj": TuyaBLECategoryInfo(

@@ -136,7 +136,16 @@ mapping: dict[str, TuyaBLECategorySwitchMapping] = {
                         key="water_valve",
                     ),
                 ),
-            ]
+            ],
+            "ldcdnigc": [   # ZX-7378 Smart Irrigation Controller
+                TuyaBLESwitchMapping(
+                    dp_id=1,
+                    description=SwitchEntityDescription(
+                        key="switch",
+                        icon="mdi:valve",
+                    ),
+                ),
+            ],
         }
     ),
     "co2bj": TuyaBLECategorySwitchMapping(
