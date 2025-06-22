@@ -63,6 +63,7 @@ class TuyaBLEFingerbotInfo:
 class TuyaBLEProductInfo:
     name: str
     manufacturer: str = DEVICE_DEF_MANUFACTURER
+    lock: bool = False
     fingerbot: TuyaBLEFingerbotInfo | None = None
 
 
@@ -476,7 +477,10 @@ devices_database: dict[str, TuyaBLECategoryInfo] = {
                 TuyaBLEProductInfo(
                     name="Irrigation computer",
                 ),
-            )
+            ),
+            "000004yeuw": TuyaBLEProductInfo(
+                name="Smart Irrigation Controller",
+            ),
         },
     ),
     "dd": TuyaBLECategoryInfo(

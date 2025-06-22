@@ -102,6 +102,7 @@ class TuyaBLEFingerbotSwitchMapping(TuyaBLESwitchMapping):
     description: SwitchEntityDescription = field(
         default_factory=lambda: SwitchEntityDescription(
             key="switch",
+            name="Switch",
         )
     )
     is_available: TuyaBLESwitchIsAvailable = is_fingerbot_in_switch_mode
@@ -413,6 +414,15 @@ mapping: dict[str, TuyaBLECategorySwitchMapping] = {
                         key="water_valve_2",
                         name="CH2 Valve",
                         entity_registry_enabled_default=True,
+                    ),
+                ),
+            ],
+            "000004yeuw": [ # Irrigation valve Royal Gardineer ZX-7378
+                TuyaBLESwitchMapping(
+                    dp_id=1,
+                    description=SwitchEntityDescription(
+                        key="switch",
+                        icon="mdi:valve",
                     ),
                 ),
             ],

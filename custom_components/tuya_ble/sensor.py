@@ -53,6 +53,7 @@ class TuyaBLEBatteryMapping(TuyaBLESensorMapping):
     description: SensorEntityDescription = field(
         default_factory=lambda: SensorEntityDescription(
             key="battery",
+            name="Battery",
             device_class=SensorDeviceClass.BATTERY,
             native_unit_of_measurement=PERCENTAGE,
             entity_category=EntityCategory.DIAGNOSTIC,
@@ -92,12 +93,13 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                     dp_id=7,
                     description=SensorEntityDescription(
                         key="battery_percentage",
+                        name="Battery Percentage",
                         device_class=SensorDeviceClass.BATTERY,
                         native_unit_of_measurement=PERCENTAGE,
                         entity_category=EntityCategory.DIAGNOSTIC,
                         state_class=SensorStateClass.MEASUREMENT,
                     ),
-                ),   
+                ),
             ]
         }
     ),
@@ -163,7 +165,7 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                                 "key_in",
                                 "low_battery",
                                 "power_off",
-                                "shock"                                
+                                "shock"
                             ],
                         ),
                     ),
@@ -336,6 +338,7 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                     dp_id=15,
                     description=SensorEntityDescription(
                         key="battery_percentage",
+                        name="Battery Percentage",
                         device_class=SensorDeviceClass.BATTERY,
                         native_unit_of_measurement=PERCENTAGE,
                         entity_category=EntityCategory.DIAGNOSTIC,
@@ -391,6 +394,7 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                     dp_id=15,
                     description=SensorEntityDescription(
                         key="battery_percentage",
+                        name="Battery Percentage",
                         device_class=SensorDeviceClass.BATTERY,
                         native_unit_of_measurement=PERCENTAGE,
                         entity_category=EntityCategory.DIAGNOSTIC,
@@ -448,6 +452,26 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
             "hfgdqhho": [  # Irrigation computer SGW08
                 TuyaBLEBatteryMapping(dp_id=11),
             ],
+            "000004yeuw": [
+                TuyaBLESensorMapping(
+                    dp_id=7,
+                    description=SensorEntityDescription(
+                        key="battery_percentage",
+                        device_class=SensorDeviceClass.BATTERY,
+                        native_unit_of_measurement=PERCENTAGE,
+                        state_class=SensorStateClass.MEASUREMENT,
+                    ),
+                ),
+                TuyaBLESensorMapping(
+                    dp_id=15,
+                    description=SensorEntityDescription(
+                        key="use_time_one",
+                        icon="mdi:timer",
+                        native_unit_of_measurement="s",
+                        state_class=SensorStateClass.MEASUREMENT,
+                    ),
+                ),
+            ],
         },
     ),
 }
@@ -457,6 +481,7 @@ rssi_mapping = TuyaBLESensorMapping(
     dp_id=SIGNAL_STRENGTH_DP_ID,
     description=SensorEntityDescription(
         key="signal_strength",
+        name="Signal Strength",
         device_class=SensorDeviceClass.SIGNAL_STRENGTH,
         native_unit_of_measurement=SIGNAL_STRENGTH_DECIBELS_MILLIWATT,
         state_class=SensorStateClass.MEASUREMENT,
