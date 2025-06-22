@@ -237,37 +237,6 @@ mapping: dict[str, TuyaBLECategorySelectMapping] = {
             ],
         },
     ),
-
-    "ggq": TuyaBLECategorySelectMapping(
-        products={
-            "000004yeuw": [ # irrigation valve Royal Gardineer ZX-7378
-                TuyaBLESelectMapping(
-                    dp_id=8,
-                    description=SelectEntityDescription(
-                        key="battery_state",
-                        options=["low", "middle", "high"],
-                        entity_category=EntityCategory.DIAGNOSTIC,
-                    ),
-                ),
-                TuyaBLESelectMapping(
-                    dp_id=10,
-                    description=SelectEntityDescription(
-                        key="weather_delay",
-                        options=["cancel", "24h", "48h", "72h"],
-                        entity_category=EntityCategory.CONFIG,
-                    ),
-                ),
-                TuyaBLESelectMapping(
-                    dp_id=12,
-                    description=SelectEntityDescription(
-                        key="work_state",
-                        options=["auto", "manual", "idle"],
-                        entity_category=EntityCategory.DIAGNOSTIC,
-                    ),
-                ),
-            ],
-        },
-    ),
 }
 
 

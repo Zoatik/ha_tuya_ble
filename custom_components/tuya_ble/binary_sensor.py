@@ -52,19 +52,6 @@ class TuyaBLECategoryBinarySensorMapping:
 
 
 mapping: dict[str, TuyaBLECategoryBinarySensorMapping] = {
-    "ggq": TuyaBLECategoryBinarySensorMapping(
-        products={
-            "000004yeuw": [
-                TuyaBLEBinarySensorMapping(
-                    dp_id=4,
-                    description=BinarySensorEntityDescription(
-                        key="fault",
-                        device_class=BinarySensorDeviceClass.PROBLEM,
-                    ),
-                ),
-            ],
-        },
-    ),
     "wk": TuyaBLECategoryBinarySensorMapping(
         products={
             **dict.fromkeys(
